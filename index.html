@@ -1,30 +1,31 @@
-<!-- 버튼 클릭 수 카운팅 어플 바닐라 JS로 만들기 
-    1. html 만들기
-    2. js 가져오기
-    3. event 감지하기
-    4. 데이터 업데이트
--->
-
 <!DOCTYPE html>
 <html>
-    <body>
-        <span>Total clicks: 0</span>
-        <button id="btn">Click me</button>
-    </body>
-    <script>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 
-        // 2. js 가져오기
-        let counter = 0;
-        const button = document.getElementById("btn");
-        const span = document.querySelector("span");
-        
-        // 4. 데이터 업데이트
-        function handleClick() {
-            counter = counter + 1;
-            span.innerText = `Total clicks: ${counter}`;
-        }
-        
-        // 3. event 감지하기 
-        button.addEventListener("click", handleClick);
-    </script>
+<script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+        "h3", {
+            id: "title",
+            onMouseEnter: () => console.log("mouse enter"), // property에 event listener 등록 가능
+        },
+        "Hello I am a span!"
+    );
+
+    const btn = React.createElement(
+        "button", {
+            onClick: () => console.log("I'm clicked"), // property에 event listener 등록 가능
+            style: {
+                backgroundColor: "tomato",
+            }
+        },
+        "Click me"
+    );
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
+</script>
 </html>
