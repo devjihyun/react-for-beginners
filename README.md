@@ -1,4 +1,6 @@
 # react-for-beginners
 react study
 
-화면 https://devjihyun.github.io/react-for-beginners
+[Demo Page](https://devjihyun.github.io/react-for-beginners "Go Demo Page")
+   
+[Study Note](https://devjihyun.github.io/react-for-beginners/note.html "Go Study note")
